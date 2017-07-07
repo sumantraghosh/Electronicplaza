@@ -10,6 +10,7 @@
 </head>
 <body>
 <TABLE>
+<tr><td colspan="2">Product Description</td></tr>
 <tr rowspan="20">
 <td colspan="2"><img src="<c:url value="/assets/images/${prodinfo.prodid}.jpg"/>"/></td>
 </tr>
