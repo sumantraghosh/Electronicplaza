@@ -23,33 +23,41 @@
 		
 		
 		
-		<div>
+		
 	<form:form  modelAttribute="supplier"
 		action="/Electronicplaza/AddSupplier" method="post">
 		
 			<form:hidden path="suppid"  />
 		
-		<center>
-			<label >Name:</label>
+		
+		<div class="container">  
+
+<table class="table table-bordered">
+            <tr>
+			<td>Name:</td>
 			<c:if test="${!flag}">
-			<form:input path="suppname"  />
+			<td><form:input path="suppname"  /></td>
 		    </c:if>
 		    <c:if test="${flag}">
-			<form:input path="suppname" value="${supplier.suppname}" />
+			<td><form:input path="suppname" value="${supplier.suppname}" /></td>
 		    </c:if>
-		    <br/>
-			<label >Address:</label>
+		    </tr>
+		    <tr>
+			<td>Address:</td>
 			<c:if test="${!flag}">
-			<form:input path="address"  />
+			<td><form:input path="address"  /></td>
 		    </c:if>
 		    <c:if test="${flag}">
-			<form:input path="address" value="${supplier.address}" />
+			<td><form:input path="address" value="${supplier.address}" /></td>
 		    </c:if>
-		    <br>
-<button type="submit" class="btn btn-default">Submit</button>
-	</center>
-	</form:form>
+		    </tr>
+		    <tr><td colspan="2">
+           <input type="submit" class="btn btn-info" value="Submit">
+           </td></tr>
+	</table>
 	</div>
+	</form:form>
+	
 		
 <div class="container">
 	<table class="table table-bordered">	

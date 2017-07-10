@@ -15,22 +15,31 @@
 </head>
 <body>
 <div id="container">
-<div class="row">
-<div class="col-sm-6 col-md-3">
+<div class="table-responsive">
+<table class="table table-bordered" >
+<tr><td colspan="4" align="center">LIST OF AVAILABLE PRODUCTS</td></tr>
+<tr bgcolor="pink">
+<td>Image</td>
+<td>Product Name</td>
+<td>Description</td>
+<td>Price</td>
+</tr>
 
 <c:forEach items="${prodlist}" var="product">
+<tr>
+<td>
 <a href="" class="thumbnail">
-<img src="<c:url value="assets/images/${product.prodid}.jpg"/>"/>
-
+<img src="<c:url value="assets/images/${product.prodid}.jpg"/>" height="150px" width="150px"/>
 </a>
+</td>
 
-<div class="caption">
-<h4>${product.prodname}</h4>
-<p>${product.price}</p>
-</div>
+
+<td><h4>${product.prodname}</h4></td>
+<td><h4>${product.proddesc}</h4></td>
+<td><h4>${product.price}</h4></td>
+</tr>
 </c:forEach>
-
-</div>
+</table>
 </div>
 </div>
   

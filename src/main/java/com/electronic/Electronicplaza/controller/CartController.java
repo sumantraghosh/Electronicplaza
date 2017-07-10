@@ -31,8 +31,31 @@ public class CartController {
 public String addToCart(@PathVariable("prodid") int prodid,@ RequestParam("quantity") int quantity,HttpSession session,Model m)
 {
 Cart cart=new Cart();
+int cartid=0,cartidmax=0;
 String username=(String)session.getAttribute("username");
-cart.setCartid(1001);
+List<Cart> findcart=cartDAO.getAll(username);
+for(Cart cart1:findcart)
+{
+cartid=cart1.getCartid();
+}
+if(findcart.size() ==0)
+{
+List<Cart> maxcartid=cartDAO.getMaxcartid();
+for(Cart cart2:maxcartid)
+{
+cartidmax=cart2.getCartid();
+}
+cartidmax=cartidmax+1;
+if(maxcartid.size()==0)
+{
+	cartidmax=1001;
+}
+cart.setCartid(cartidmax);
+}
+else
+{
+cart.setCartid(cartid);	
+}
 cart.setProdid(prodid);
 cart.setQuantity(quantity);
 cart.setStatus("N");
