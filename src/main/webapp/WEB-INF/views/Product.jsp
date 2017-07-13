@@ -24,12 +24,12 @@
 			</tr>
 			<tr>
 				<td>Product Name</td>
-				<td><form:input path="prodname" required="true"/></td>
+				<td><form:input path="prodname" required /></td>
 			</tr>
 			
 			<tr>
 				<td>Category</td>
-				<td><form:select path="cat.catid" required="true">
+				<td><form:select path="cat.catid" required >
 				
 						<form:option value="0" label="------Select----" />
 						<form:options items="${catlist}"  itemValue="catid" itemLabel="catname"/>
@@ -38,7 +38,7 @@
 			</tr>		
 			<tr>
 				<td>Supplier</td>
-				<td><form:select path="suppid" required="true">
+				<td><form:select path="suppid" required >
 				<form:option value="0" label="------Select----" />
 						<form:options items="${supplist}"  itemValue="suppid" itemLabel="suppname"/>
 					</form:select>
@@ -48,15 +48,15 @@
 			
 			<tr>
 				<td>Price</td>
-				<td><form:input path="price" required="true" /></td>
+				<td><form:input path="price" required /></td>
 			</tr>
 			<tr>
 				<td>Stock</td>
-				<td><form:input path="quantity" required="true" /></td>
+				<td><form:input path="quantity" required /></td>
 			</tr>
 			<tr>
 				<td>Product Description</td>
-				<td><form:textarea path="proddesc" required="true" /></td>
+				<td><form:textarea path="proddesc" required /></td>
 			</tr>
 			<tr>
 			<td>Product Image</td>
