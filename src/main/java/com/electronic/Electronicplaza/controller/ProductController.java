@@ -4,6 +4,7 @@ import java.util.LinkedHashMap;
 
 
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,8 @@ public class ProductController
 	
 	@Autowired
 	ProductDAO productDAO;
+	@Autowired
+	SupplierDAO supplierDAO;
 	
 	@RequestMapping("/Product")
 	public String showProduct(Model m)
@@ -44,6 +47,10 @@ public class ProductController
 		m.addAttribute("prodlist", products);
 		List <Category> categories = categoryDAO.getAll();
 		m.addAttribute("catlist",categories);
+		
+		List <Supplier> suppliers = supplierDAO.getAll();
+		m.addAttribute("supplist",suppliers);
+		
 		return "Product";
 		
 	}
@@ -61,8 +68,7 @@ public class ProductController
 	@RequestMapping(value="/ProdDesc/{prodid}")
 	public String showProductDesc(@PathVariable("prodid")int prodid,Model m)
 	{
-		//System.out.println("entered");
-		//System.out.println(prodid);
+		
 		Product product = productDAO.getById(prodid);
 		m.addAttribute("prodinfo", product);
 		return "ProdDesc";
@@ -99,10 +105,7 @@ public class ProductController
 			System.out.println("file uploading problem");
 		}
 		
-		/* if(product.getCat()!=null)
-		System.out.println(product.getCat().getCatid());
-		else
-			System.out.println("category object is null"); */
+		
 		return "redirect:Product";
 			
 		

@@ -19,7 +19,7 @@
 </head>
 <body>
 	
-		<h3>Welcome, Enter The Supplier Details</h3>
+		
 		
 		
 		
@@ -33,25 +33,28 @@
 		<div class="container">  
 
 <table class="table table-bordered">
+<tr><td colspan="2" align="center">Supplier Details</td></tr>
+
+
             <tr>
 			<td>Name:</td>
 			<c:if test="${!flag}">
-			<td><form:input path="suppname"  /></td>
+			<td><form:input path="suppname"  required="true" /></td>
 		    </c:if>
 		    <c:if test="${flag}">
-			<td><form:input path="suppname" value="${supplier.suppname}" /></td>
+			<td><form:input path="suppname" value="${supplier.suppname}" required="true" /></td>
 		    </c:if>
 		    </tr>
 		    <tr>
 			<td>Address:</td>
 			<c:if test="${!flag}">
-			<td><form:input path="address"  /></td>
+			<td><form:input path="address" required="true" /></td>
 		    </c:if>
 		    <c:if test="${flag}">
-			<td><form:input path="address" value="${supplier.address}" /></td>
+			<td><form:input path="address" value="${supplier.address}" required="true" /></td>
 		    </c:if>
 		    </tr>
-		    <tr><td colspan="2">
+		    <tr><td colspan="2" align="center">
            <input type="submit" class="btn btn-info" value="Submit">
            </td></tr>
 	</table>

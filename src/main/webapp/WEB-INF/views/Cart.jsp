@@ -51,6 +51,9 @@
 
 </table>
 </center>
+<c:if test="${flag}">
+Quantity exceeds stock
+</c:if>
 </div>
 </div>
 

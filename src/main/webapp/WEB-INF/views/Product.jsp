@@ -15,21 +15,22 @@
   <div class="container">  
 
 <table class="table table-bordered">
-			<tr>
-				<td colspan="2" >Product Details</td>
+			<tr bgcolor="pink">
+				<td colspan="2" align="center">Product Details</td>
 			</tr>
 			<tr>
 				<td>Product ID</td>
-				<td><form:input path="prodid" /></td>
+				<td><form:input path="prodid" disabled="true"/></td>
 			</tr>
 			<tr>
 				<td>Product Name</td>
-				<td><form:input path="prodname" /></td>
+				<td><form:input path="prodname" required="true"/></td>
 			</tr>
 			
 			<tr>
 				<td>Category</td>
-				<td><form:select path="cat.catid">
+				<td><form:select path="cat.catid" required="true">
+				
 						<form:option value="0" label="------Select----" />
 						<form:options items="${catlist}"  itemValue="catid" itemLabel="catname"/>
 					</form:select>
@@ -37,20 +38,25 @@
 			</tr>		
 			<tr>
 				<td>Supplier</td>
-				<td><form:input path="suppid" /></td>
+				<td><form:select path="suppid" required="true">
+				<form:option value="0" label="------Select----" />
+						<form:options items="${supplist}"  itemValue="suppid" itemLabel="suppname"/>
+					</form:select>
+				
+				</td>
 				</tr>
 			
 			<tr>
 				<td>Price</td>
-				<td><form:input path="price" /></td>
+				<td><form:input path="price" required="true" /></td>
 			</tr>
 			<tr>
 				<td>Stock</td>
-				<td><form:input path="quantity" /></td>
+				<td><form:input path="quantity" required="true" /></td>
 			</tr>
 			<tr>
 				<td>Product Description</td>
-				<td><form:textarea path="proddesc" /></td>
+				<td><form:textarea path="proddesc" required="true" /></td>
 			</tr>
 			<tr>
 			<td>Product Image</td>
@@ -59,14 +65,13 @@
 			
 			
 			
-			<tr>
-			<td colspan="2"><input type="submit" class="btn btn-info" value="Submit"></td>
+			<tr bgcolor="pink">
+			<td colspan="2" align="center"><input type="submit" class="btn btn-info" value="Submit"></td>
 			</tr>
 
 
 
 </table>
-
 </div>
 </form:form>
 

@@ -15,9 +15,10 @@
 	  </script> 
 </head>
 <body>
+
 <div class="container">
 <div class="table-responsive">
-<center>
+
 <table class="table table-bordered" border="1">
 <tr>
 <td colspan="4" ><center><h3>Order Confirmation</h3></center></td>
@@ -31,19 +32,49 @@
 </tr>
 <c:forEach items="${cartitems}" var="cartitem">
 <tr>
+<form action="<c:url value="/updateCart/${grandtotal}" />"  method="post">
 <td>${cartitem.prodname}</td>
 <td>${cartitem.quantity}</td>
 <td>${cartitem.price*cartitem.quantity}</td>
 <td><img src="<c:url value="/assets/images/${cartitem.prodid}.jpg"/>" height="100px" width="100px"/></td>
+
 </tr>
 </c:forEach>
 <tr>
-<td colspan="4" align="right">Grand Total= ${grandtotal}</td>
+<td colspan="4" align="right"><b>Grand Total= ${grandtotal}</b></td>
 
 
 </table>
-</center>
+
 </div>
 </div>
+<div class="container">
+<div class="table-responsive">
+
+<table class="table table-bordered" border="1">
+
+<tr bgcolor="pink">
+<td colspan="4" > Payment Information</td>
+</tr>
+<tr>
+<td>Payment Mode</td>
+<td><input type="radio" name="pmode" value="CC"/>Credit Card</td>
+<td><input type="radio" name="pmode" value="IB"/>Internet Banking</td>
+<td><input type="radio" name="pmode" value="CD"/>Cash</td>
+
+</tr>
+<tr>
+<td>Shipping Address</td><td><textarea name="shipaddr" cols="20" rows="5"></textarea></td>
+</tr>
+<tr>
+<td colspan="4"><input type="submit" class="btn btn-info" value="pay"/></td>
+</tr>
+
+
+</form>
+</table>
+</div>
+</div>
+
 </body>
 </html>

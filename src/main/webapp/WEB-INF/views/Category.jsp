@@ -19,7 +19,7 @@
 </head>
 <body>
 	
-		<h3>Welcome, Enter The category Details</h3>
+		
 			
 	<form:form  modelAttribute="category"
 		action="/Electronicplaza/AddCategory" method="post">
@@ -28,25 +28,31 @@
 		<div class="container">  
 
 <table class="table table-bordered">
-		    <tr><td>
+	<tr bgcolor="pink">
+	<td colspan="2" align="center">Category Details</td>
+	</tr>
+	
+		    <tr>
+		    <td>
 			Name:</td>
 			<c:if test="${!flag}">
-			<td><form:input path="catname"  /></td>
+			<td><form:input path="catname" required="true" /></td>
 		    </c:if>
 		    <c:if test="${flag}">
-			<td><form:input path="catname" value="${category.catname}" /></td>
+			<td><form:input path="catname" value="${category.catname}" required="true"/></td>
 		    </c:if>
 		    </tr>
 		    <tr><td>
 			Description:</td>
 			<c:if test="${!flag}">
-			<td><form:input path="catdesc"  /></td>
+			<td><form:input path="catdesc"  required="true" /></td>
 		    </c:if>
 		    <c:if test="${flag}">
-			<td><form:input path="catdesc" value="${category.catdesc}" /></td>
+			<td><form:input path="catdesc" value="${category.catdesc}" required="true" /></td>
 		    </c:if>
 		    </tr>
-<tr><td colspan="2">		    
+<tr bgcolor="pink">
+<td colspan="2" align="center">		    
 <input type="submit" class="btn btn-info" value="submit">
 </td>
 </tr>

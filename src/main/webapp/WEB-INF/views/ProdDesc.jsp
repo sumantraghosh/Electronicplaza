@@ -18,7 +18,7 @@
 <div class="container">
 <div class="table-responsive">
 
-<table class="table table-bordered" border="1">
+<table class="table table-bordered" >
 
 
 <tr><td colspan="5" align="center"><h3>Product Description</h3></td></tr>
@@ -51,7 +51,9 @@ Quantity<input type="text" name="quantity" >
 </tr>
 
 </table>
-
+<c:if test="${flag}">
+Quantity exceeds stock
+</c:if>
 </div>
 </div>
 </body>

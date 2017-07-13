@@ -48,19 +48,7 @@ public class CategoryController {
 		}
 	
  
-/*@RequestMapping(value="/updateCategory/{catid}")
-public String getUpdateCategory(@PathVariable("catid") int catid,Model m)
-{
-	
-	Category category=categoryDAO.getById(catid);
-	
-			
-	List<Category> list=categoryDAO.getAll();
-	m.addAttribute("category",category);
-	m.addAttribute("list",list);
-	return "Category";
-    
-}*/
+
 		@RequestMapping(value="/updateCategory/{catid}")
 		public String getUpdateCategory(@PathVariable("catid") int catid,Model m)
 		{
