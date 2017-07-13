@@ -11,6 +11,27 @@
 </head>
 
 <body>
+<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				
+				<ul class="nav navbar-nav">
+					<li class="active">
+						<a href="#">Home</a>
+					</li>
+					<li>
+						<a href="/Electronicplaza/moveTocart">Move to Cart</a>						
+									
+					</li>
+					
+					
+				</ul>
+			<ul class="nav navbar-nav navbar-right">
+					
+      				<li><a href="/Electronicplaza/login"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+				</ul>	
+			</div>
+			
+	</nav>		
 <div class="container">
 <div class="table-responsive">
 
@@ -41,16 +62,17 @@
 <td colspan="5" align="center">
 <form action="/Electronicplaza/addToCart/${prodinfo.prodid}" method="get">
 Quantity<input type="text" name="quantity" required />
-<input type="submit" class="btn btn-info" value="ADD TO CART" >
+<input type="submit" class="btn btn-info" value="ADD TO CART" />
 </form>
 </td>
 </tr>
-
 </table>
+</div>
+</div>
 <c:if test="${flag}">
-Quantity exceeds stock
+<center>
+<font color="red" size="6">Quantity exceeds stock</font>
+</center>
 </c:if>
-</div>
-</div>
 </body>
 </html>

@@ -92,6 +92,19 @@ else
 return "Cart";
 
 }
+@RequestMapping(value="/moveTocart")
+public String moveTOcart(HttpSession session,Model m)
+{
+	String username=(String)session.getAttribute("username");
+    List<Cart> list=cartDAO.getAll(username);
+    m.addAttribute("cartitems",list);
+    if(list.size()==0)
+    {
+    	boolean flag=true;
+    	m.addAttribute("flag1",flag);	
+    }
+    return "Cart";
+}
 @RequestMapping(value="/updateCartItem/{citemid}")
 public String updateCartItem(@PathVariable("citemid") int citemid,@ RequestParam("quantity") int quantity,HttpSession session,Model m)
 {

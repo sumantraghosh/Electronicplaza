@@ -65,6 +65,17 @@ public class ProductController
 		return "AllProducts";
 		
 	}
+	@RequestMapping("/UserHome")
+	public String showUserHome(Model m)
+	{
+		Product product = new Product();
+		List <Product> products = productDAO.getAll();
+		m.addAttribute("product", product);
+		m.addAttribute("prodlist", products);
+		
+		return "UserHome";
+		
+	}
 	@RequestMapping(value="/ProdDesc/{prodid}")
 	public String showProductDesc(@PathVariable("prodid")int prodid,Model m)
 	{

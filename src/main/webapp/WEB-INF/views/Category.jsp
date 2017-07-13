@@ -9,6 +9,31 @@
 
 </head>
 <body>
+<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				
+				<ul class="nav navbar-nav">
+					<li class="active">
+						<a href="#">Home</a>
+					</li>
+					<li>
+						<a href="Product">Manage Products</a>
+					</li>
+					<li>
+						<a href="Category">Manage Categories</a>
+					</li>
+					<li>
+						<a href="Supplier">Manage Suppliers</a>
+					</li>
+					
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					
+      				<li><a href="/Electronicplaza/login"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+				</ul>
+			</div>
+			
+	</nav>	
 
 			
 	<form:form  modelAttribute="category"
@@ -26,19 +51,19 @@
 		    <td>
 			Name:</td>
 			<c:if test="${!flag}">
-			<td><form:input path="catname" required /></td>
+			<td><form:input path="catname" required="true" /></td>
 		    </c:if>
 		    <c:if test="${flag}">
-			<td><form:input path="catname" value="${category.catname}" required /></td>
+			<td><form:input path="catname" value="${category.catname}" required="true" /></td>
 		    </c:if>
 		    </tr>
 		    <tr><td>
 			Description:</td>
 			<c:if test="${!flag}">
-			<td><form:input path="catdesc"  required /></td>
+			<td><form:input path="catdesc"  required="true" /></td>
 		    </c:if>
 		    <c:if test="${flag}">
-			<td><form:input path="catdesc" value="${category.catdesc}" required /></td>
+			<td><form:input path="catdesc" value="${category.catdesc}" required="true" /></td>
 		    </c:if>
 		    </tr>
 <tr bgcolor="pink">

@@ -17,6 +17,7 @@ public class CommonController {
 		return "login";
 		
 	}
-
-
+	
+		
+	
 }

@@ -11,6 +11,31 @@
 </head>
  
 <body>
+<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				
+				<ul class="nav navbar-nav">
+					<li class="active">
+						<a href="#">Home</a>
+					</li>
+					<li>
+						<a href="Product">Manage Products</a>
+					</li>
+					<li>
+						<a href="Category">Manage Categories</a>
+					</li>
+					<li>
+						<a href="Supplier">Manage Suppliers</a>
+					</li>
+					
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					
+      				<li><a href="/Electronicplaza/login"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+				</ul>
+			</div>
+			
+	</nav>	
 <form:form  method="post" action="/Electronicplaza/InsertProduct" modelAttribute="product" enctype="multipart/form-data">
   <div class="container">  
 
@@ -24,12 +49,12 @@
 			</tr>
 			<tr>
 				<td>Product Name</td>
-				<td><form:input path="prodname" required /></td>
+				<td><form:input path="prodname" required="true" /></td>
 			</tr>
 			
 			<tr>
 				<td>Category</td>
-				<td><form:select path="cat.catid" required >
+				<td><form:select path="cat.catid" required="true" >
 				
 						<form:option value="0" label="------Select----" />
 						<form:options items="${catlist}"  itemValue="catid" itemLabel="catname"/>
@@ -38,7 +63,7 @@
 			</tr>		
 			<tr>
 				<td>Supplier</td>
-				<td><form:select path="suppid" required >
+				<td><form:select path="suppid" required="true" >
 				<form:option value="0" label="------Select----" />
 						<form:options items="${supplist}"  itemValue="suppid" itemLabel="suppname"/>
 					</form:select>
@@ -48,15 +73,15 @@
 			
 			<tr>
 				<td>Price</td>
-				<td><form:input path="price" required /></td>
+				<td><form:input path="price" required="true" /></td>
 			</tr>
 			<tr>
 				<td>Stock</td>
-				<td><form:input path="quantity" required /></td>
+				<td><form:input path="quantity" required="required" /></td>
 			</tr>
 			<tr>
 				<td>Product Description</td>
-				<td><form:textarea path="proddesc" required /></td>
+				<td><form:textarea path="proddesc" required="true" /></td>
 			</tr>
 			<tr>
 			<td>Product Image</td>

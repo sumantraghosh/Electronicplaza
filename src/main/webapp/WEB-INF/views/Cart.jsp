@@ -15,6 +15,24 @@
 
 </head>
 <body>
+<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				
+				<ul class="nav navbar-nav">
+					<li class="active">
+						<a href="#">Home</a>
+					</li>
+					
+					
+				</ul>
+			<ul class="nav navbar-nav navbar-right">
+					
+      				<li><a href="/Electronicplaza/login"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+				</ul>	
+			</div>
+			
+	</nav>	
+<c:if test="${!flag1}">	
 <div class="container">
 <div class="table-responsive">
 
@@ -45,17 +63,24 @@
 </tr>
 </c:forEach>
 <tr>
-<td colspan="5" align="center"><a href="/Electronicplaza/AllProducts">Continue Shopping</a>
+<td colspan="5" align="center"><a href="/Electronicplaza/UserHome">Continue Shopping</a>
 <a href="<c:url value="/checkout"/>">Checkout</a></td>
 </tr>
 
 </table>
 
 <c:if test="${flag}">
-Quantity exceeds stock
+<center>
+<font color="red" size="6">Quantity exceeds stock</font>
+</center>
 </c:if>
 </div>
 </div>
-
+</c:if>
+<c:if test="${flag1}">
+<center>
+<font color="red" size="10">Cart is Empty.<a href="/Electronicplaza/UserHome">Continue Shopping</a></font>
+</center>
+</c:if>
 </body>
 </html>
