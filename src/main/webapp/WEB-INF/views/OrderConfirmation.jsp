@@ -15,9 +15,28 @@
 	  </script> 
 </head>
 <body>
-Thank you ${username}<br/>
-Your order of Rs ${grandtotal} has been processed successfully<br/>
-
+<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				
+				<ul class="nav navbar-nav">
+					<li class="active">
+						<a href="/Electronicplaza">Home</a>
+					</li>
+					
+					
+				</ul>
+			<ul class="nav navbar-nav navbar-right">
+					
+      				<li><a href="/Electronicplaza/login"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+				</ul>	
+			</div>
+			
+	</nav>
+	<center>	
+<font color="blue">Thank you ${username}</font><br/>
+<font color="blue">Your order of Rs ${grandtotal} has been processed successfully</font><br/>
+<font color="red">Items will be delivered within 2 to 3 business days.</font>
+</center>
 
 
 

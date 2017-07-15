@@ -14,7 +14,7 @@
 				
 				<ul class="nav navbar-nav">
 					<li class="active">
-						<a href="#">Home</a>
+						<a href="/Electronicplaza">Home</a>
 					</li>
 					<li>
 						<a href="Product">Manage Products</a>

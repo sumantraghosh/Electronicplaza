@@ -31,6 +31,21 @@ public class CartController {
 @RequestMapping(value="/addToCart/{prodid}")
 public String addToCart(@PathVariable("prodid") int prodid,@ RequestParam("quantity") int quantity,HttpSession session,Model m)
 {
+int checker=0;
+int productid;
+String currentusername=(String)session.getAttribute("username");
+List<Cart> findprodid=cartDAO.getAll(currentusername);
+for(Cart cart3:findprodid)
+{
+ productid=cart3.getProdid();
+if(prodid==productid)
+{
+	checker=1;
+}
+}
+
+if(checker==0)
+{
 int stock=productDAO.getById(prodid).getQuantity();
 int check=0;
 if(quantity>stock)
@@ -79,7 +94,7 @@ m.addAttribute("cartitems",list);
 if(check==1)
 {
 	
-	String username=(String)session.getAttribute("username");
+    String username=(String)session.getAttribute("username");
     
     Product product=productDAO.getById(prodid);
 	m.addAttribute("prodinfo",product);		
@@ -88,9 +103,19 @@ if(check==1)
 	return "ProdDesc";
 
 }
+
 else
 return "Cart";
-
+}
+else 
+{
+	Product product=productDAO.getById(prodid);
+    m.addAttribute("prodinfo",product);
+	boolean flag1=true;
+    m.addAttribute("flag1",flag1);
+	return "ProdDesc";
+}
+	
 }
 @RequestMapping(value="/moveTocart")
 public String moveTOcart(HttpSession session,Model m)

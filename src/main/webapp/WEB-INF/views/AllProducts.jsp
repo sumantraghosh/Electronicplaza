@@ -14,6 +14,26 @@
 <title>Insert title here</title>
 </head>
 <body>
+<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				
+				<ul class="nav navbar-nav">
+					<li class="active">
+						<a href="/Electronicplaza">Home</a>
+					</li>
+					
+					<li>
+						<a href="AllProducts">Appliances</a>
+					</li>
+					
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/Electronicplaza/UserDetail"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      				<li><a href="/Electronicplaza/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+				</ul>
+			</div>
+			
+	</nav>		
 <div id="container">
 <div class="table-responsive">
 <table class="table table-bordered" >

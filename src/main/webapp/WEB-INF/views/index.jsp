@@ -13,7 +13,7 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	  
 
-          <link rel="stylesheet" type="text/css" href="index.css">
+       
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <!-- stylesheet link -->
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -34,26 +34,19 @@
 
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="#">FZone</a>
-				</div>
+				
 				<ul class="nav navbar-nav">
 					<li class="active">
 						<a href="#">Home</a>
 					</li>
-					<li>
-						<a href="#">About Us</a>
-					</li>
-					<li>
-						<a href="#">Contact Us</a>
-					</li>
+					
 					<li>
 						<a href="AllProducts">Appliances</a>
 					</li>
 					
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+					<li><a href="/Electronicplaza/UserDetail"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       				<li><a href="/Electronicplaza/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 				</ul>
 			</div>
@@ -71,15 +64,15 @@
 			  <!-- Wrapper for slides -->
 			  <div class="carousel-inner">
 			    <div class="item active">
-			      <img src="assets/images/flatgreen.jpg"  style="width:700px;height:300px;" >
+			      <img src="assets/images/firstimage.jpg"  style="width:700px;height:300px;" >
 			    </div>
 
 			    <div class="item">
-			      <img src="assets/images/flatorange.jpg" style="width:700px;height:300px;">
+			      <img src="assets/images/secondimage.jpg" style="width:700px;height:300px;">
 			    </div>
 
 			    <div class="item">
-			      <img src="assets/images/vista.jpg" style="width:700px;height:300px;">
+			      <img src="assets/images/thirdimage.jpg" style="width:700px;height:300px;">
 			    </div>
 			  </div>
 
@@ -107,17 +100,35 @@
 			</div>	-->
 	
 	</div>
+	<div class="container-fluid">
+  
+  <div class="row">
+    <div class="col-sm-4" >
+      
+      <img src="assets/images/fourthimage.jpg">
+    </div>
+    <div class="col-sm-4" >
+      
+      <img src="assets/images/fifthimage.jpg">
+    </div>
+    <div class="col-sm-4" >
+      
+      <img src="assets/images/sixthimage.jpg">
+    </div>
+  </div>
+</div>
+
 	
 	</body>
     <footer>  
-		<div>	
+		<div align="center">	
 			<p>Shopping Cart</p>  
 			<p>   
 			<address> ShoppingCart, plot no. 6, near Quest Mall,Ballygunje, kolkata Pin no. 700047   
 			</address>   
 			
 			<p>For Information Contact :   
-			<a href="suman@gmail.com">sumank@gmail.com</a>.  
+			<a href="sumantracescok@gmail.com">sumantracescok@gmail.com</a>.  
 			</p>
 		 </div>
 	 

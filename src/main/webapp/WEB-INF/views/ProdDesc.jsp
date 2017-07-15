@@ -16,7 +16,7 @@
 				
 				<ul class="nav navbar-nav">
 					<li class="active">
-						<a href="#">Home</a>
+						<a href="/Electronicplaza">Home</a>
 					</li>
 					<li>
 						<a href="/Electronicplaza/moveTocart">Move to Cart</a>						
@@ -72,6 +72,11 @@ Quantity<input type="text" name="quantity" required />
 <c:if test="${flag}">
 <center>
 <font color="red" size="6">Quantity exceeds stock</font>
+</center>
+</c:if>
+<c:if test="${flag1}">
+<center>
+<font color="red" size="6">This product already exists in the cart.<a href="/Electronicplaza/moveTocart">Move to Cart</a></font>
 </center>
 </c:if>
 </body>

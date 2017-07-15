@@ -1,5 +1,6 @@
 package com.electronic.Electronicplaza.controller;
 import org.springframework.stereotype.Controller;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -17,7 +18,12 @@ public class CommonController {
 		return "login";
 		
 	}
-	
+	@RequestMapping("/UserDetail")
+	public String user()
+	{
+		return "UserDetail";
+		
+	}
 		
 	
 }
