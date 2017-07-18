@@ -31,7 +31,7 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					
-      				<li><a href="/Electronicplaza/login"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      				<li><a href="/Electronicplaza/perform_logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
 				</ul>
 			</div>
 			
@@ -45,7 +45,7 @@
 			</tr>
 			<tr>
 				<td>Product ID</td>
-				<td><form:input path="prodid" disabled="true"/></td>
+				<td><form:input path="prodid" readOnly="true" /></td>
 			</tr>
 			<tr>
 				<td>Product Name</td>

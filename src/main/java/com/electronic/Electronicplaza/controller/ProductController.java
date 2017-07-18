@@ -65,7 +65,7 @@ public class ProductController
 		return "AllProducts";
 		
 	}
-	@RequestMapping("/UserHome")
+	@RequestMapping("/ViewAppliances")
 	public String showUserHome(Model m)
 	{
 		Product product = new Product();
@@ -73,7 +73,7 @@ public class ProductController
 		m.addAttribute("product", product);
 		m.addAttribute("prodlist", products);
 		
-		return "UserHome";
+		return "ViewAppliances";
 		
 	}
 	@RequestMapping(value="/ProdDesc/{prodid}")
@@ -83,6 +83,15 @@ public class ProductController
 		Product product = productDAO.getById(prodid);
 		m.addAttribute("prodinfo", product);
 		return "ProdDesc";
+		
+	}
+	@RequestMapping(value="/ProdDescription/{prodid}")
+	public String showProductDesccription(@PathVariable("prodid")int prodid,Model m)
+	{
+		
+		Product product = productDAO.getById(prodid);
+		m.addAttribute("prodinfo", product);
+		return "ProdDescription";
 		
 	}
 	@RequestMapping(value ="/InsertProduct", method = RequestMethod.POST)
@@ -134,6 +143,9 @@ public class ProductController
 		List <Category> categories = categoryDAO.getAll();
 		
 		m.addAttribute("catlist",categories);
+        List <Supplier> suppliers = supplierDAO.getAll();
+		
+		m.addAttribute("supplist",suppliers);
 		return "Product";
 	}
 	

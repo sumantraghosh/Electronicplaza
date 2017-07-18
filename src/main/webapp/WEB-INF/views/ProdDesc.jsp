@@ -19,6 +19,9 @@
 						<a href="/Electronicplaza">Home</a>
 					</li>
 					<li>
+						<a href="/Electronicplaza/AllProducts">Appliances</a>
+					</li>
+					<li>
 						<a href="/Electronicplaza/moveTocart">Move to Cart</a>						
 									
 					</li>
@@ -61,7 +64,7 @@
 <tr>
 <td colspan="5" align="center">
 <form action="/Electronicplaza/addToCart/${prodinfo.prodid}" method="get">
-Quantity<input type="text" name="quantity" required />
+Quantity<input type="number" name="quantity" min="1" required />
 <input type="submit" class="btn btn-info" value="ADD TO CART" />
 </form>
 </td>

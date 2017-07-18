@@ -44,14 +44,16 @@ public class UserController
 			System.out.println("---Role:"+role.getAuthority()+" User Name:"+username+"----");
 			if(role.getAuthority().equals("ROLE_ADMIN"))
 			{
-				page="AdminHome";
+				
+				
+				page="index";
 			}
 			else
 			{
 				List<Product> prodlist=productDAO.getAll();
 				m.addAttribute("prodlist",prodlist);
 				
-				page="UserHome";
+				page="index";
 			}
 		}
 		

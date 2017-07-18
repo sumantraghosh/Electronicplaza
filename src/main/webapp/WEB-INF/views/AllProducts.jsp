@@ -22,14 +22,14 @@
 						<a href="/Electronicplaza">Home</a>
 					</li>
 					
-					<li>
-						<a href="AllProducts">Appliances</a>
-					</li>
 					
+					<li>
+						<a href="/Electronicplaza/moveTocart">Move to Cart</a>
+					</li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="/Electronicplaza/UserDetail"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      				<li><a href="/Electronicplaza/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					
+      				<li><a href="/Electronicplaza/perform_logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
 				</ul>
 			</div>
 			
@@ -47,9 +47,10 @@
 
 <c:forEach items="${prodlist}" var="product">
 <tr>
+
 <td>
-<a href="" class="thumbnail">
-<img src="<c:url value="assets/images/${product.prodid}.jpg"/>" height="150px" width="150px"/>
+<a href="/Electronicplaza/ProdDesc/${product.prodid}" class="thumbnail">
+<img src="<c:url value="/assets/images/${product.prodid}.jpg"/>" height="150px" width="150px"/>
 </a>
 </td>
 

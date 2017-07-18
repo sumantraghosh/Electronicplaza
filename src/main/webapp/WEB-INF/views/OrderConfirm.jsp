@@ -21,7 +21,7 @@
 				</ul>
 			<ul class="nav navbar-nav navbar-right">
 					
-      				<li><a href="/Electronicplaza/login"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      				<li><a href="/Electronicplaza/perform_logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
 				</ul>	
 			</div>
 			

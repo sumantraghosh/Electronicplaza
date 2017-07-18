@@ -24,6 +24,22 @@ public class CommonController {
 		return "UserDetail";
 		
 	}
+	@RequestMapping("/AdminHome")
+	public String adminhome()
+	{
+		return "AdminHome";
 		
-	
+	}	
+	@RequestMapping("/UserHome")
+	public String userhome()
+	{
+		return "UserHome";
+		
+	}	
+	@RequestMapping("/UserFirst")
+	public String userfirst()
+	{
+		return "UserFirst";
+		
+	}	
 }

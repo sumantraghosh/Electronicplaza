@@ -27,7 +27,7 @@
 				</ul>
 			<ul class="nav navbar-nav navbar-right">
 					
-      				<li><a href="/Electronicplaza/login"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      				<li><a href="/Electronicplaza/perform_logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
 				</ul>	
 			</div>
 			
@@ -53,7 +53,7 @@
 <form action="<c:url value="/updateCartItem/${cartitem.citemid}"/>" method="post">
 
 <td>${cartitem.prodname}</td>
-<td><input type="text" value="${cartitem.quantity}" name="quantity" required /></td>
+<td><input type="number" value="${cartitem.quantity}" name="quantity" min="1" required /></td>
 <td>${cartitem.price*cartitem.quantity}</td>
 <td><img src="<c:url value="/assets/images/${cartitem.prodid}.jpg"/>" height="100px" width="100px"/></td>
 <td><input type="submit" class="btn btn-info" value="UPDATE">
@@ -63,7 +63,7 @@
 </tr>
 </c:forEach>
 <tr>
-<td colspan="5" align="center"><a href="/Electronicplaza/UserHome">Continue Shopping</a>
+<td colspan="5" align="center"><a href="/Electronicplaza/AllProducts">Continue Shopping</a>
 <a href="<c:url value="/checkout"/>">Checkout</a></td>
 </tr>
 

@@ -1,6 +1,7 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
-
-
+<%@ page import="org.springframework.security.core.GrantedAuthority" %>
+<%@ page import="org.springframework.security.core.context.SecurityContextHolder" %>
+ <%@ page import ="java.util.Collection" %>
 <html>
 	<head>
 	  <title>Electronic Plaza Project</title>
@@ -21,6 +22,7 @@
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
 	  </script>
+	  
 	</head>
 	<style type="text/css">
 		.carousel-inner>.item>img{
@@ -28,11 +30,82 @@
 		}
 	</style>
 	<body>
+	
 		<div>		
 			<h1 align="center">Welcome to Electronic Plaza</h1>
 		<!-- designing navbar -->
 
-		<nav class="navbar navbar-inverse">
+	
+	<%
+	Collection<GrantedAuthority> authorities = (Collection<GrantedAuthority>) SecurityContextHolder.getContext().getAuthentication().getAuthorities();
+		
+		for(GrantedAuthority role:authorities)
+		{
+			
+			if(role.getAuthority().equals("ROLE_ADMIN"))
+			{
+			%>	
+			<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				
+				<ul class="nav navbar-nav">
+					<li class="active">
+						<a href="#">Home</a>
+					</li>
+					<li>
+						<a href="Product">Manage Products</a>
+					</li>
+					<li>
+						<a href="Category">Manage Categories</a>
+					</li>
+					<li>
+						<a href="Supplier">Manage Suppliers</a>
+					</li>
+					
+				</ul>
+			<ul class="nav navbar-nav navbar-right">
+					
+      				<li><a href="/Electronicplaza/perform_logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+				</ul>	
+			</div>
+			
+	</nav>	
+			<%	
+			}
+			else if(role.getAuthority().equals("ROLE_USER"))
+			{
+			%>
+			<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				
+				<ul class="nav navbar-nav">
+					<li class="active">
+						<a href="/Electronicplaza">Home</a>
+					</li>
+					<li>
+						<a href="/Electronicplaza/AllProducts">Appliances</a>
+					</li>
+					<li>
+						<a href="/Electronicplaza/moveTocart">Move to Cart</a>
+					</li>
+					
+					
+				</ul>
+			<ul class="nav navbar-nav navbar-right">
+					
+      				<li><a href="/Electronicplaza/perform_logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+				</ul>	
+			</div>
+			
+	</nav>	
+			<%
+			}
+			else
+			{
+			%>
+			
+
+			<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				
 				<ul class="nav navbar-nav">
@@ -41,7 +114,7 @@
 					</li>
 					
 					<li>
-						<a href="AllProducts">Appliances</a>
+						<a href="ViewAppliances">Appliances</a>
 					</li>
 					
 				</ul>
@@ -51,7 +124,12 @@
 				</ul>
 			</div>
 			
-	</nav>		
+	</nav>	
+	        <%
+	         }
+		}
+	        %>
+	
 			<!-- carousel -->
 	<div id="myCarousel" class="carousel slide" data-ride="carousel" >
 			  <!-- Indicators -->
