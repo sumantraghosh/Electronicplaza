@@ -64,7 +64,8 @@
 </c:forEach>
 <tr>
 <td colspan="5" align="center"><a href="/Electronicplaza/AllProducts">Continue Shopping</a>
-<a href="<c:url value="/checkout"/>">Checkout</a></td>
+ <a href="<c:url value="/checkout"/>">Checkout</a></td>
+
 </tr>
 
 </table>
@@ -79,7 +80,7 @@
 </c:if>
 <c:if test="${flag1}">
 <center>
-<font color="red" size="10">Cart is Empty.<a href="/Electronicplaza/UserHome">Continue Shopping</a></font>
+<font color="red" size="10">Cart is Empty.<a href="/Electronicplaza/AllProducts">Continue Shopping</a></font>
 </center>
 </c:if>
 </body>

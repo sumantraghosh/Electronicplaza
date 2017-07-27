@@ -36,10 +36,5 @@ public class CommonController {
 		return "UserHome";
 		
 	}	
-	@RequestMapping("/UserFirst")
-	public String userfirst()
-	{
-		return "UserFirst";
-		
-	}	
+	
 }

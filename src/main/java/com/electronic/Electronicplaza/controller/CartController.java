@@ -167,6 +167,12 @@ cartDAO.delete(cart);
 String username=(String)session.getAttribute("username");
 List<Cart> list=cartDAO.getAll(username);
 m.addAttribute("cartitems",list);
+if(list.size()==0)
+{
+	boolean flag=true;
+	m.addAttribute("flag1",flag);	
+}
+
 return "Cart";
 }
 

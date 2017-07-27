@@ -32,10 +32,12 @@
 			</div>
 			
 	</nav>
-	<center>	
+	<center>
+	<form:form modelAttribute ="thankyou">	
 <font color="blue">Thank you ${username}</font><br/>
-<font color="blue">Your order of Rs ${grandtotal} has been processed successfully</font><br/>
+<font color="blue">Your order of Rs ${checkout.grandtotal} has been processed successfully</font><br/>
 <font color="red">Items will be delivered within 2 to 3 business days.</font>
+    </form:form>
 </center>
 
 

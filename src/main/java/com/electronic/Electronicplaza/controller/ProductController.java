@@ -1,4 +1,5 @@
 package com.electronic.Electronicplaza.controller;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
 
@@ -39,12 +40,22 @@ public class ProductController
 	SupplierDAO supplierDAO;
 	
 	@RequestMapping("/Product")
-	public String showProduct(Model m)
+	public String showProduct(@ModelAttribute("product") Product product,BindingResult result,Model m)
 	{
-		Product product = new Product();
+		 
 		List <Product> products = productDAO.getAll();
+		
 		m.addAttribute("product", product);
 		m.addAttribute("prodlist", products);
+		List <String> supp=new ArrayList<String>();
+		for(Product prod:products)
+		{
+			 String suppname=supplierDAO.getById(prod.getSuppid()).getSuppname();
+			
+			supp.add(suppname);
+		}
+		m.addAttribute("supplist",supp);
+		
 		List <Category> categories = categoryDAO.getAll();
 		m.addAttribute("catlist",categories);
 		
@@ -122,7 +133,7 @@ public class ProductController
 		}
 		else
 		{
-			System.out.println("file uploading problem");
+			System.out.println("file not exists or uploading problem");
 		}
 		
 		

@@ -64,7 +64,7 @@
 <tr>
 <td colspan="5" align="center">
 
-Quantity<input type="number" name="quantity" min="1" required />
+<!--  Quantity<input type="number" name="quantity" min="1" required /> -->
 
 <a href="<c:url value="/user/Cart"/>">Add</a>
 

@@ -43,6 +43,7 @@
 			<tr bgcolor="pink">
 				<td colspan="2" align="center">Product Details</td>
 			</tr>
+			
 			<tr>
 				<td>Product ID</td>
 				<td><form:input path="prodid" readOnly="true" /></td>
@@ -106,6 +107,7 @@
   
 
 	<tr bgcolor="pink">
+	<td>Image</td>
 		<td>Product ID</td>
 		<td>Product Name</td>
 		<td>Price</td>
@@ -117,20 +119,26 @@
 		<td>Operation</td>
 	</tr>
 	<c:forEach items="${prodlist}" var="product">
+	
 		<tr>
+		<td> 
+<img src="<c:url value="/assets/images/${product.prodid}.jpg"/>" height="50px" width="50px"/>
+       </td>
 			<td>${product.prodid}</td>
 			<td>${product.prodname}</td>
 			<td>${product.price}</td>
 			<td>${product.quantity}</td>
 			
 			<td>${product.suppid}</td>
+			
 			<td>${product.proddesc}</td>
 			<td>${product.cat.catname}</td>
 			<td><a class="btn btn-warning" href="/Electronicplaza/deleteProduct/${product.prodid}">Delete</a>
 				<a class="btn btn-danger" href="/Electronicplaza/updateProduct/${product.prodid}">Update</a>
 			</td>
 		</tr>
-	</c:forEach>
+		</c:forEach>
+	
 </table> 
 </div> 
 <!-- Completed Displaying Table -->

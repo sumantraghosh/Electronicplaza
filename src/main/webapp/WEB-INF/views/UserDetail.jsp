@@ -22,7 +22,7 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					
-      				<li><a href="/Electronicplaza/login"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      				<li><a href="/Electronicplaza/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 				</ul>
 			</div>
 			
@@ -30,7 +30,7 @@
 
 			
 
-<form  action="/Electronicplaza/InsertUser" method="post">
+<form:form   action="/Electronicplaza/InsertUser" method="post" modelAttribute="user">
   <div class="container">  
 
 <table class="table table-bordered">
@@ -78,7 +78,7 @@
 
 </table>
 </div>
-</form>
+</form:form>
 	
 			
 			

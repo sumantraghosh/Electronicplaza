@@ -1,6 +1,4 @@
- 
- 
-<beans xmlns="http://www.springframework.org/schema/beans"
+ <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mvc="http://www.springframework.org/schema/mvc" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -28,6 +26,15 @@
 	</bean>
 <mvc:resources mapping="/assets/images/**" location="WEB-INF/assets/images/" />  
 <mvc:resources mapping="/resources/**" location="/resources/" />
+
+<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">
+		<property name="flowExecutor" ref="checkoutFlowExecutor" />
+	</bean>
+
+	<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
+		<property name="flowRegistry" ref="checkoutFlowRegistry" />
+	</bean>
+
 </beans>
    
    

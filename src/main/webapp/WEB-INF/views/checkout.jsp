@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -9,6 +10,7 @@
 
 </head>
 <body>
+<form:form modelAttribute ="checkout">
 <nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				
@@ -25,7 +27,8 @@
 				</ul>	
 			</div>
 			
-	</nav>		
+	</nav>	
+
 <div class="container">
 <div class="table-responsive">
 
@@ -40,9 +43,9 @@
 <td>Image</td>
 
 </tr>
-<c:forEach items="${cartitems}" var="cartitem">
+<c:forEach items="${checkout.cartList}" var="cartitem">
 <tr>
-<form action="<c:url value="/updateCart/${grandtotal}" />"  method="post">
+
 <td>${cartitem.prodname}</td>
 <td>${cartitem.quantity}</td>
 <td>${cartitem.price*cartitem.quantity}</td>
@@ -50,14 +53,22 @@
 
 </tr>
 </c:forEach>
+
+ 
+
 <tr>
-<td colspan="4" align="right"><b>Grand Total= ${grandtotal}</b></td>
 
+<td colspan="4" align="right"><b>Grand Total= ${checkout.grandtotal}</b>
+</td>
 
+</tr>
 </table>
 
 </div>
 </div>
+</form:form>
+<!-- <form action="<c:url value="/updateCart/${grandtotal}" />"  method="post"> -->
+<form method="post">
 <div class="container">
 <div class="table-responsive">
 
@@ -77,14 +88,14 @@
 <td>Shipping Address</td><td><textarea name="shipaddr" cols="20" rows="5" required ></textarea></td>
 </tr>
 <tr>
-<td colspan="4" align="center"><input type="submit" class="btn btn-info" value="pay"/></td>
+<td colspan="4" align="center"><input type="submit"  value="payment" name="_eventId_submit" /></td>
 </tr>
 
 
-</form>
+
 </table>
 </div>
 </div>
-
+</form>
 </body>
 </html>

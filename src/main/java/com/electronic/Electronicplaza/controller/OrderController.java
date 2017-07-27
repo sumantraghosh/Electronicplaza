@@ -22,7 +22,7 @@ public class OrderController {
 	CartDAO cartDAO;
 	@Autowired
 	ProductDAO productDAO;
-	@RequestMapping("/checkout")
+	/*@RequestMapping("/checkout")
 	public String orderConfirm(HttpSession session,Model m)
 	{
 		String username=(String)session.getAttribute("username");
@@ -39,7 +39,7 @@ public class OrderController {
 		
 		m.addAttribute("grandtotal",grandtotal);
 		m.addAttribute("cartitems",list);
-		return "OrderConfirm";
+		return "checkout";
 		
 	}
 	@RequestMapping(value="/updateCart/{grandtotal}")
@@ -64,6 +64,6 @@ public class OrderController {
 	    }
 	    m.addAttribute("username",username);
 	    m.addAttribute("grandtotal",grandtotal);
-	return "OrderConfirmation";
-	}
+	return "thankyou";
+	}*/
 }
