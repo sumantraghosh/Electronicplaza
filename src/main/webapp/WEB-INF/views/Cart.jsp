@@ -39,20 +39,24 @@
 <table class="table table-bordered" border="1">
 
 <tr>
-<td colspan="5" align="center"><h3>Shopping Cart</h3></td>
+<td colspan="6" align="center"><h3>Shopping Cart</h3></td>
 </tr>
 <tr bgcolor="pink">
 <td>Product Name</td>
+<td>Stock</td>
 <td>Quantity</td>
 <td>Sub Total</td>
 <td>Image</td>
 <td>Operation</td>
 </tr>
-<c:forEach items="${cartitems}" var="cartitem">
+<c:forEach items="${cartitems}" var="cartitem"  >
+<c:forEach items="${stocklist}" var="stocklist"  >
+<c:if test="${cartitem.prodid eq stocklist.prodid}">
 <tr>
-<form action="<c:url value="/updateCartItem/${cartitem.citemid}"/>" method="post">
 
-<td>${cartitem.prodname}</td>
+<form action="<c:url value="/updateCartItem/${cartitem.citemid}"/>"  method="post">
+
+<td>${cartitem.prodname}  </td><td>${stocklist.quantity}</td>
 <td><input type="number" value="${cartitem.quantity}" name="quantity" min="1" required /></td>
 <td>${cartitem.price*cartitem.quantity}</td>
 <td><img src="<c:url value="/assets/images/${cartitem.prodid}.jpg"/>" height="100px" width="100px"/></td>
@@ -60,10 +64,19 @@
 <a href="<c:url value="/deleteCartItem/${cartitem.citemid}"/>">Delete</a>
 </td>
 </form>
+
 </tr>
+<c:if test="${cartitem.quantity > stocklist.quantity}">
+<tr>
+<td colspan="6" align="center"><font color="red">Currently the Stock is less to meet your quantity demands</font></td>
+</tr>
+</c:if>
+</c:if>
+
+</c:forEach>
 </c:forEach>
 <tr>
-<td colspan="5" align="center"><a href="/Electronicplaza/AllProducts">Continue Shopping</a>
+<td colspan="6" align="center"><a href="/Electronicplaza/AllProducts">Continue Shopping</a>
  <a href="<c:url value="/checkout"/>">Checkout</a></td>
 
 </tr>

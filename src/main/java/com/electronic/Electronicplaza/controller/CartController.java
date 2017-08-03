@@ -1,6 +1,7 @@
 package com.electronic.Electronicplaza.controller;
 import org.springframework.stereotype.Controller;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import com.electronic.Electronicplazaback.dao.*;
 import com.electronic.Electronicplazaback.model.*;
@@ -16,6 +17,8 @@ import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.validation.BindingResult;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -89,7 +92,11 @@ cart.setProdname(product.getProdname());
 cart.setPrice(product.getPrice());
 cartDAO.addToCart(cart);
 List<Cart> list=cartDAO.getAll(username);
+
 m.addAttribute("cartitems",list);
+List<Product> stocklist=productDAO.getAll();
+
+m.addAttribute("stocklist",stocklist );
 }
 if(check==1)
 {
@@ -117,12 +124,19 @@ else
 }
 	
 }
+private String toString(int currentstock) {
+	// TODO Auto-generated method stub
+	return null;
+}
 @RequestMapping(value="/moveTocart")
 public String moveTOcart(HttpSession session,Model m)
 {
 	String username=(String)session.getAttribute("username");
     List<Cart> list=cartDAO.getAll(username);
     m.addAttribute("cartitems",list);
+    List<Product> stocklist=productDAO.getAll();
+
+    m.addAttribute("stocklist",stocklist );
     if(list.size()==0)
     {
     	boolean flag=true;
@@ -144,6 +158,9 @@ if(quantity>stock)
     String username=(String)session.getAttribute("username");
     List<Cart> list=cartDAO.getAll(username);
     m.addAttribute("cartitems",list);
+    List<Product> stocklist=productDAO.getAll();
+
+    m.addAttribute("stocklist",stocklist );
     boolean flag=true;
 	m.addAttribute("flag",flag);
 }
@@ -155,6 +172,9 @@ cartDAO.update(cart);
 String username=(String)session.getAttribute("username");
 List<Cart> list=cartDAO.getAll(username);
 m.addAttribute("cartitems",list);
+List<Product> stocklist=productDAO.getAll();
+
+m.addAttribute("stocklist",stocklist );
 
 }
 return "Cart";
@@ -167,6 +187,9 @@ cartDAO.delete(cart);
 String username=(String)session.getAttribute("username");
 List<Cart> list=cartDAO.getAll(username);
 m.addAttribute("cartitems",list);
+List<Product> stocklist=productDAO.getAll();
+
+m.addAttribute("stocklist",stocklist );
 if(list.size()==0)
 {
 	boolean flag=true;

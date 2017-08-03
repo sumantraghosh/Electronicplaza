@@ -113,13 +113,14 @@
 		<td>Price</td>
 		<td>Quantity</td>
 	
-		<td>Supplier Id</td>
+		<td>Supplier </td>
 		<td>Description</td>
 		<td>Catname</td>
 		<td>Operation</td>
 	</tr>
 	<c:forEach items="${prodlist}" var="product">
-	
+	<c:forEach items="${supplist}" var="supplist">
+	<c:if test="${product.suppid eq supplist.suppid}">
 		<tr>
 		<td> 
 <img src="<c:url value="/assets/images/${product.prodid}.jpg"/>" height="50px" width="50px"/>
@@ -129,7 +130,7 @@
 			<td>${product.price}</td>
 			<td>${product.quantity}</td>
 			
-			<td>${product.suppid}</td>
+			<td>${supplist.suppname}</td>
 			
 			<td>${product.proddesc}</td>
 			<td>${product.cat.catname}</td>
@@ -137,6 +138,8 @@
 				<a class="btn btn-danger" href="/Electronicplaza/updateProduct/${product.prodid}">Update</a>
 			</td>
 		</tr>
+		</c:if>
+		</c:forEach>
 		</c:forEach>
 	
 </table> 

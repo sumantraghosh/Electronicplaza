@@ -53,13 +53,15 @@
 <td>Supplier</td>
 <td>ProdDesc</td>
 <td>Price</td>
+<td>Current Stock</td>
 </tr>
 <tr>
 <td>${prodinfo.prodid}</td>
 <td>${prodinfo.prodname}</td>
-<td>${prodinfo.suppid}</td>
+<td>${supp}</td>
 <td>${prodinfo.proddesc}</td>
 <td>${prodinfo.price}</td>
+<td>${prodinfo.quantity}</td>
 </tr>
 <tr>
 <td colspan="5" align="center">

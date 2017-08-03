@@ -47,14 +47,7 @@ public class ProductController
 		
 		m.addAttribute("product", product);
 		m.addAttribute("prodlist", products);
-		List <String> supp=new ArrayList<String>();
-		for(Product prod:products)
-		{
-			 String suppname=supplierDAO.getById(prod.getSuppid()).getSuppname();
-			
-			supp.add(suppname);
-		}
-		m.addAttribute("supplist",supp);
+		
 		
 		List <Category> categories = categoryDAO.getAll();
 		m.addAttribute("catlist",categories);
@@ -93,6 +86,8 @@ public class ProductController
 		
 		Product product = productDAO.getById(prodid);
 		m.addAttribute("prodinfo", product);
+		String supp=supplierDAO.getById(product.getSuppid()).getSuppname();
+		m.addAttribute("supp", supp);
 		return "ProdDesc";
 		
 	}
@@ -102,6 +97,8 @@ public class ProductController
 		
 		Product product = productDAO.getById(prodid);
 		m.addAttribute("prodinfo", product);
+		String supp=supplierDAO.getById(product.getSuppid()).getSuppname();
+		m.addAttribute("supp", supp);
 		return "ProdDescription";
 		
 	}
@@ -164,7 +161,7 @@ public class ProductController
 	public String deleteProduct(@PathVariable("prodid")int prodid,Model m)
 	{
 		productDAO.delete(productDAO.getById(prodid));
-			
+		
 		return "redirect:/Product";
 	}
 	
