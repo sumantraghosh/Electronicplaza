@@ -59,7 +59,7 @@
 <tr>
 <td>${prodinfo.prodid}</td>
 <td>${prodinfo.prodname}</td>
-<td>${supp}</td>
+<td>${prodinfo.supp.suppname}</td>
 <td>${prodinfo.proddesc}</td>
 <td>${prodinfo.price}</td>
 <td>${prodinfo.quantity}</td>

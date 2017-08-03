@@ -86,8 +86,7 @@ public class ProductController
 		
 		Product product = productDAO.getById(prodid);
 		m.addAttribute("prodinfo", product);
-		String supp=supplierDAO.getById(product.getSuppid()).getSuppname();
-		m.addAttribute("supp", supp);
+		
 		return "ProdDesc";
 		
 	}
@@ -97,8 +96,7 @@ public class ProductController
 		
 		Product product = productDAO.getById(prodid);
 		m.addAttribute("prodinfo", product);
-		String supp=supplierDAO.getById(product.getSuppid()).getSuppname();
-		m.addAttribute("supp", supp);
+		
 		return "ProdDescription";
 		
 	}
@@ -109,7 +107,7 @@ public class ProductController
 		
 	
 		product.setCat(categoryDAO.getById(product.getCat().getCatid()));
-				
+		product.setSupp(supplierDAO.getById(product.getSupp().getSuppid()));		
 		productDAO.insert(product);
 		System.out.println("image storing started");
 		String path="c:\\Users\\ABC\\workspace\\Electronicplaza\\src\\main\\webapp\\WEB-INF\\assets\\images\\";

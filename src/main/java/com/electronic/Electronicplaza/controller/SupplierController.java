@@ -4,7 +4,10 @@ import org.springframework.stereotype.Controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+
+import com.electronic.Electronicplazaback.dao.ProductDAO;
 import com.electronic.Electronicplazaback.dao.SupplierDAO;
+import com.electronic.Electronicplazaback.model.Product;
 import com.electronic.Electronicplazaback.model.Supplier;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,7 +28,8 @@ public class SupplierController {
 	
 	@Autowired
 	SupplierDAO supplierDAO;
-		
+	@Autowired
+	ProductDAO productDAO;	
 		@RequestMapping("/Supplier")
 		public String viewSupplier(Model m)
 		{
@@ -46,6 +50,24 @@ public class SupplierController {
 		@RequestMapping("/deletesupplier/{id}")
 		public String removeSupp(@PathVariable("id")int id)
 		{
+			List <Product>products=productDAO.getAll();
+			for(Product product:products) 
+			{
+			try{
+				if(product.getSupp().getSuppid()==id)
+				{
+					product.setSupp(null);
+					productDAO.insert(product);
+				}
+			}
+			catch(Exception e)
+			{
+				
+			}
+				
+			}
+				
+			
 			supplierDAO.delete(supplierDAO.getById(id));
 			return "redirect:/Supplier";
 		}

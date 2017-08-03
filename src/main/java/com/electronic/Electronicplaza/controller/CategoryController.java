@@ -1,9 +1,10 @@
 package com.electronic.Electronicplaza.controller;
 import org.springframework.stereotype.Controller;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
-import com.electronic.Electronicplazaback.dao.CategoryDAO;
-import com.electronic.Electronicplazaback.model.Category;
+import com.electronic.Electronicplazaback.dao.*;
+import com.electronic.Electronicplazaback.model.*;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,6 +24,8 @@ public class CategoryController {
 	
 	@Autowired
 	CategoryDAO categoryDAO;
+	@Autowired
+	ProductDAO productDAO;
 		
 		@RequestMapping("/Category")
 		public String viewCategory(Model m)
@@ -44,6 +47,23 @@ public class CategoryController {
 		@RequestMapping("/deletecategory/{id}")
 		public String removeCat(@PathVariable("id")int id)
 		{
+			List <Product>products=productDAO.getAll();
+		for(Product product:products) 
+		{
+		try{
+			if(product.getCat().getCatid()==id)
+			{
+				product.setCat(null);
+				productDAO.insert(product);
+			}
+		}
+		catch(Exception e)
+		{
+			
+		}
+			
+		}
+			
 			categoryDAO.delete(categoryDAO.getById(id));
 			return "redirect:/Category";
 		}
