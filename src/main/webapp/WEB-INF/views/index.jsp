@@ -44,7 +44,9 @@
 			
 			if(role.getAuthority().equals("ROLE_ADMIN"))
 			{
+				String username = SecurityContextHolder.getContext().getAuthentication().getName();
 			%>	
+			<h3 align="right"><font color="blue">Welcome <%=username %></font></h1>
 			<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				
@@ -74,7 +76,9 @@
 			}
 			else if(role.getAuthority().equals("ROLE_USER"))
 			{
+				String username = SecurityContextHolder.getContext().getAuthentication().getName();
 			%>
+			<h3 align="right"><font color="blue">Welcome <%=username %></font></h3>
 			<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				

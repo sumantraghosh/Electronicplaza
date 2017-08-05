@@ -13,13 +13,12 @@
 	<view-state id="payment" view="/WEB-INF/views/checkout.jsp" model= "flowScope.checkout">
 		
 		
-		<transition on="submit" to="thankyou" />
+		<transition on="submit" to="thanks" />
 	</view-state>
 
-	<view-state id="thankyou" view="/WEB-INF/views/thankyou.jsp" >
+	<view-state id="thanks" view="/WEB-INF/views/thankyou.jsp">
 		<on-render>
 			<evaluate expression = "checkoutHandler.updateCart()" />
-			
 		</on-render>
 	</view-state>
 </flow>

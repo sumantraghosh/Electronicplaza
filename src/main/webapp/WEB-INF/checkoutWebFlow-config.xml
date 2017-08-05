@@ -10,10 +10,10 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
  
  
 <!-- Define the flow executor responsible for executing login web flow -->
-<flow:flow-executor id="checkoutFlowExecutor" flow-registry="checkoutFlowRegistry"/>
+<flow:flow-executor id="checkoutFlowexecutor" flow-registry="checkoutFlowregistry"/>
  
 <!-- Define the registry that holds references to all the flow related XML configuration-->
-<flow:flow-registry id="checkoutFlowRegistry">
+<flow:flow-registry id="checkoutFlowregistry">
 <flow:flow-location id="checkout" path="/WEB-INF/checkoutFlow.xml"/>
 </flow:flow-registry>
  

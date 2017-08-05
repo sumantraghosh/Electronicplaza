@@ -41,9 +41,9 @@
 <table class="table table-bordered" >
 
 
-<tr><td colspan="5" align="center"><h3>Product Description</h3></td></tr>
+<tr><td colspan="6" align="center"><h3>Product Description</h3></td></tr>
 <tr>
-<td colspan="5" align="center"><img src="<c:url value="/assets/images/${prodinfo.prodid}.jpg"/>" height="150px" width="150px"/></td>
+<td colspan="6" align="center"><img src="<c:url value="/assets/images/${prodinfo.prodid}.jpg"/>" height="150px" width="150px"/></td>
 </tr>
 
 
@@ -64,7 +64,7 @@
 <td>${prodinfo.quantity}</td>
 </tr>
 <tr>
-<td colspan="5" align="center">
+<td colspan="6" align="center">
 
 <!--  Quantity<input type="number" name="quantity" min="1" required /> -->
 
